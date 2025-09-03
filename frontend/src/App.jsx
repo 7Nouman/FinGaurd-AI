@@ -52,9 +52,7 @@ function App() {
         <div className="text-center mb-10">
           <div className="flex items-center justify-center space-x-3 mb-3">
             <div className="text-3xl">🛡️</div>
-            <h1 className="text-4xl font-extrabold tracking-tight">
-              <span className="text-white">Fin</span><span className="text-purple-400">Guard</span> <span className="text-white">AI</span>
-            </h1>
+            <h1 className="text-4xl font-extrabold tracking-tight text-purple-400">FinGuard AI</h1>
           </div>
           <p className="text-gray-400 text-lg">Advanced fraud detection for financial messages</p>
         </div>
@@ -63,6 +61,7 @@ function App() {
         <div className="bg-[#11111a] border border-[#1f1f2a] rounded-2xl p-6 sm:p-8 mb-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center gap-2">
+              <span className="text-purple-400">🤖</span>
               <span>Message Scanner</span>
             </h2>
             <button onClick={loadDemoText} className="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-4">Load demo text</button>
@@ -73,7 +72,7 @@ function App() {
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Guaranteed 200% return in 7 days! Join our Telegram group now for IPO allotments."
+            placeholder="Enter financial message to analyze:"
             className="w-full h-36 sm:h-32 px-4 py-3 rounded-xl bg-[#0e0e16] border border-[#232338] text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent resize-none"
             disabled={loading}
           />
