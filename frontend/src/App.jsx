@@ -41,83 +41,90 @@ function App() {
     }
   };
 
+  const loadDemoText = () => {
+    setMessage('Guaranteed 200% return in 7 days! Join our Telegram group now for IPO allotments.');
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#0b0b13] text-white py-10 px-4">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            🛡️ FinGuard AI
-          </h1>
-          <p className="text-lg text-gray-600">
-            Protect yourself from IPO frauds, fake advisors, and pump-and-dump schemes
-          </p>
+        <div className="text-center mb-10">
+          <div className="flex items-center justify-center space-x-3 mb-3">
+            <div className="text-3xl">🛡️</div>
+            <h1 className="text-4xl font-extrabold tracking-tight">
+              <span className="text-white">Fin</span><span className="text-purple-400">Guard</span> <span className="text-white">AI</span>
+            </h1>
+          </div>
+          <p className="text-gray-400 text-lg">Advanced fraud detection for financial messages</p>
         </div>
 
-        {/* Main Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-          <div className="space-y-6">
-            {/* Textarea */}
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                Paste suspicious investment message here:
-              </label>
-              <textarea
-                id="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Example: Guaranteed IPO allotment if you invest ₹50,000 today!"
-                className="w-full h-32 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                disabled={loading}
-              />
-            </div>
-
-            {/* Scan Button */}
-            <div className="text-center">
-              <button
-                onClick={handleScan}
-                disabled={loading || !message.trim()}
-                className={`px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 ${
-                  loading || !message.trim()
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg transform hover:scale-105'
-                }`}
-              >
-                {loading ? (
-                  <div className="flex items-center space-x-2">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Scanning...</span>
-                  </div>
-                ) : (
-                  '🔍 Scan Message'
-                )}
-              </button>
-            </div>
-
-            {/* Error Message */}
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <div className="flex items-center space-x-2">
-                  <span className="text-red-600">⚠️</span>
-                  <span className="text-red-800">{error}</span>
-                </div>
-              </div>
-            )}
+        {/* Message Scanner Card */}
+        <div className="bg-[#11111a] border border-[#1f1f2a] rounded-2xl p-6 sm:p-8 mb-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white flex items-center gap-2">
+              <span>Message Scanner</span>
+            </h2>
+            <button onClick={loadDemoText} className="text-sm text-purple-400 hover:text-purple-300 underline underline-offset-4">Load demo text</button>
           </div>
+
+          <label htmlFor="message" className="block text-sm text-gray-400 mb-2">Enter financial message to analyze:</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Guaranteed 200% return in 7 days! Join our Telegram group now for IPO allotments."
+            className="w-full h-36 sm:h-32 px-4 py-3 rounded-xl bg-[#0e0e16] border border-[#232338] text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent resize-none"
+            disabled={loading}
+          />
+
+          <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button
+              onClick={handleScan}
+              disabled={loading || !message.trim()}
+              className={`w-full sm:w-auto justify-center inline-flex items-center gap-2 px-8 py-3 rounded-xl font-semibold text-white transition-all duration-200 ${
+                loading || !message.trim()
+                  ? 'bg-[#3a3a55] cursor-not-allowed'
+                  : 'bg-gradient-to-r from-purple-500 to-fuchsia-600 hover:opacity-95'
+              }`}
+            >
+              {loading ? (
+                <div className="flex items-center space-x-2">
+                  <div className="animate-spin rounded-full h-5 w-5 border-2 border-transparent border-t-white"></div>
+                  <span>Scanning...</span>
+                </div>
+              ) : (
+                <>
+                  <span>⚡</span>
+                  <span>Scan Message</span>
+                </>
+              )}
+            </button>
+
+            <button
+              onClick={loadDemoText}
+              className="w-full sm:w-auto justify-center inline-flex items-center px-6 py-3 rounded-xl border border-[#2a2a3d] text-gray-200 hover:bg-[#1a1a24]"
+            >
+              Demo
+            </button>
+          </div>
+
+          {error && (
+            <div className="mt-5 bg-[#221a1a] border border-red-800/40 text-red-300 rounded-xl p-4">
+              <div className="flex items-center space-x-2">
+                <span>⚠️</span>
+                <span>{error}</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Results */}
         {result && (
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 text-center">Scan Results</h2>
             <ResultCard result={result} />
           </div>
         )}
-
-        {/* Footer */}
-        <div className="text-center text-gray-500 text-sm mt-12">
-          <p>Built with ❤️ for hackathon - FinGuard AI protects investors from financial fraud</p>
-        </div>
       </div>
     </div>
   );
