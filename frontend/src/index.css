@@ -4,44 +4,6 @@
 
 @layer base {
   :root {
-<<<<<<< HEAD
-    --background: 220 20% 6%;
-    --foreground: 210 40% 98%;
-    --card: 220 18% 8%;
-    --card-foreground: 210 40% 98%;
-    --primary: 260 95% 65%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 220 15% 12%;
-    --muted-foreground: 215.4 16.3% 65%;
-    --border: 220 15% 15%;
-    --input: 220 15% 12%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* Custom tokens */
-    --success: 142 76% 45%;
-    --success-foreground: 210 40% 98%;
-    --warning: 45 93% 58%;
-    --warning-foreground: 220 20% 6%;
-    --danger: 0 84% 60%;
-    --danger-foreground: 210 40% 98%;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(260 95% 65%), hsl(280 85% 55%));
-    --gradient-security: linear-gradient(135deg, hsl(220 20% 6%), hsl(220 15% 12%));
-    --gradient-risk-low: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 70% 50%));
-    --gradient-risk-medium: linear-gradient(135deg, hsl(45 93% 58%), hsl(45 85% 50%));
-    --gradient-risk-high: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 75% 55%));
-
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(260 95% 65% / 0.3);
-    --shadow-card: 0 8px 32px hsl(220 20% 0% / 0.3);
-  }
-
-  body { @apply bg-background text-foreground; }
-=======
     /* Semantic colors */
     --background: #0b0f1a;
     --foreground: #e6e7ee;
@@ -108,5 +70,4 @@
   .slide-in-from-bottom-4 { transform: translateY(1rem); animation-name: fadein, slideup; animation-duration: 300ms, 300ms; animation-fill-mode: forwards, forwards; }
   @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
   @keyframes slideup { from { transform: translateY(1rem); } to { transform: translateY(0); } }
->>>>>>> fc8eeb8 (P1)
 }
