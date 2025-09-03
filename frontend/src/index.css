@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+<<<<<<< HEAD
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+    --card: 220 18% 8%;
+    --card-foreground: 210 40% 98%;
+    --primary: 260 95% 65%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 215.4 16.3% 65%;
+    --border: 220 15% 15%;
+    --input: 220 15% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Custom tokens */
+    --success: 142 76% 45%;
+    --success-foreground: 210 40% 98%;
+    --warning: 45 93% 58%;
+    --warning-foreground: 220 20% 6%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 210 40% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(260 95% 65%), hsl(280 85% 55%));
+    --gradient-security: linear-gradient(135deg, hsl(220 20% 6%), hsl(220 15% 12%));
+    --gradient-risk-low: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 70% 50%));
+    --gradient-risk-medium: linear-gradient(135deg, hsl(45 93% 58%), hsl(45 85% 50%));
+    --gradient-risk-high: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 75% 55%));
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(260 95% 65% / 0.3);
+    --shadow-card: 0 8px 32px hsl(220 20% 0% / 0.3);
+  }
+
+  body { @apply bg-background text-foreground; }
+=======
+    /* Semantic colors */
+    --background: #0b0f1a;
+    --foreground: #e6e7ee;
+
+    --card: #0e1422cc;
+    --card-foreground: #e6e7ee;
+
+    --muted: #12192bcc;
+    --muted-foreground: #a8b0c3;
+
+    --border: #1f2a44;
+    --input: #1f2a44;
+
+    --primary: #6c5ce7; /* semantic primary */
+    --primary-foreground: #ffffff;
+
+    --secondary: #111827;
+    --secondary-foreground: #e6e7ee;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #4f46e5 35%, #3b82f6 100%);
+    --gradient-risk-low: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+    --gradient-risk-medium: linear-gradient(135deg, #f59e0b 0%, #fb7185 100%);
+    --gradient-risk-high: linear-gradient(135deg, #f43f5e 0%, #7c3aed 100%);
+
+    /* Shadows */
+    --shadow-card: 0 8px 30px -12px rgba(67, 56, 202, 0.35);
+    --shadow-glow: 0 0 0 0 rgba(99, 102, 241, 0.4), 0 10px 30px -12px rgba(99, 102, 241, 0.45);
+    --shadow-glow-strong: 0 0 0 2px rgba(99, 102, 241, 0.5), 0 12px 40px -10px rgba(99, 102, 241, 0.6);
+  }
+
+  .dark {
+    /* identical in this design since default is dark */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image: radial-gradient(60% 60% at 50% 20%, rgba(76, 29, 149, 0.25) 0%, transparent 60%),
+      radial-gradient(40% 40% at 80% 0%, rgba(30, 64, 175, 0.25) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .bg-background { background-color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .bg-card { background-color: var(--card); }
+  .text-card-foreground { color: var(--card-foreground); }
+  .bg-muted { background-color: var(--muted); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  .border-border { border-color: var(--border); }
+  .bg-secondary { background-color: var(--secondary); }
+  .text-secondary-foreground { color: var(--secondary-foreground); }
+  .text-danger { color: var(--danger); }
+  .text-success { color: var(--success); }
+  .text-warning { color: var(--warning); }
+  .focus-ring-primary { box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5); }
+  .animate-in { animation: fadein 300ms ease-out; }
+  .fade-in { opacity: 0; animation-name: fadein; animation-fill-mode: forwards; }
+  .slide-in-from-bottom-4 { transform: translateY(1rem); animation-name: fadein, slideup; animation-duration: 300ms, 300ms; animation-fill-mode: forwards, forwards; }
+  @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideup { from { transform: translateY(1rem); } to { transform: translateY(0); } }
+>>>>>>> fc8eeb8 (P1)
+}
